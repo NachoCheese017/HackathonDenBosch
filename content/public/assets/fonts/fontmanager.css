@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('roboto/Roboto-Regular.ttf');
+    src: url('roboto/Roboto-Regular.ttf') format('embedded-opentype'),
+    url('roboto/Roboto-Regular.ttf') format('woff'),
+    url('roboto/Roboto-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Oswald';
+    src: url('oswald/Oswald-Regular.ttf');
+    src: url('oswald/Oswald-Regular.ttf') format('embedded-opentype'),
+    url('oswald/Oswald-Regular.ttf') format('woff'),
+    url('oswald/Oswald-Regular.ttf') format('truetype');
+}
