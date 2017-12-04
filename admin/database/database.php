@@ -18,7 +18,7 @@ class DB {
         $this->pdo = new PDO("mysql:host=$this->server_name;dbname=$this->db_name", $this->username, $this->password);
     }
     
-    public function get_var($sql) {
+    public function get_var2($sql) {
         if(isset($sql)) {
             $result = $this->pdo->query($sql);
             
@@ -44,9 +44,21 @@ class DB {
             while($array = $result->fetch()) {
                 array_push($data, $array);
             }
-            
             return $data;
         }
     }
     
+    public function insert($sql) {
+        if(isset($sql)) {
+            $result = $this->pdo->query($sql);
+            $result->execute();
+        }
+    }
+    
+    public function delete_table($sql) {
+        if(isset($sql)) {
+            $result = $this->pdo->query($sql);
+            $result->execute();
+        }
+    }
 }
