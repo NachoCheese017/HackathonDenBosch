@@ -1,12 +1,15 @@
 <?php
-
+//Class compiler
+require(ABSPATH.'functions.php');
 require(ABSPATH.'admin/classcompiler.php');
 
-$router = new Router;
+//maakt een nieuw db object naar hackathondenbosch
 $db = new DB('localhost','root','','hackathondenbosch');
 
+//Maakt een router object voor pagination
+$router = new Router;
 
-//Maakt de url en redirect
+//Redirect naar de goede url
 $uri = str_replace('/'.$website_name.'/', '', $_SERVER['REQUEST_URI']);
 $uri = substr($uri, 0, strpos($uri, '?'));
 
