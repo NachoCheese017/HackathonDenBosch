@@ -6,6 +6,6 @@
         <?php include_once(ABSPATH.'content/public/assets/assetmanager.php'); ?>
     </head>
     <body>
-        <?php require(ABSPATH.'content/content.php'); ?>
+        <?php require(ABSPATH.$router->direct($uri)); ?>
     </body>
 </html>

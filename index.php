@@ -1,5 +1,5 @@
 <?php
-$website_name = "HackathonDenBosch";
+$website_name = "hackathondenbosch";
 $webpath = "localhost/$website_name/";
 
 //Absolute path
