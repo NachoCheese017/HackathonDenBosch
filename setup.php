@@ -1,7 +1,9 @@
 <?php
 //Class compiler
-require(ABSPATH.'functions.php');
 require(ABSPATH.'admin/classcompiler.php');
+
+require(ABSPATH.'functions.php');
+
 
 //maakt een nieuw db object naar hackathondenbosch
 $db = new DB('localhost','root','','hackathondenbosch');
