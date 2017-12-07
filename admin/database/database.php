@@ -1,64 +1,77 @@
 <?php
+// Connect with database
+function ConnectDB()
+{
+    try
+    {
+        $pdo = new PDO('mysql:host=localhost;dbname=hackathondenbosch', 'root', '');
+    }
+    catch(PDOException $e)
+    {
+        echo $e->getMessage();
+    }
+    return $pdo;
+}
 
-class DB {
-    
-    private $server_name;
-    private $username;
-    private $password;
-    private $db_name;
-    
-    private $pdo;
-    
-    public function __construct($server_name, $username, $password, $db_name) {
-        $this->server_name = $server_name;
-        $this->username = $username;
-        $this->password = $password;
-        $this->db_name = $db_name;
-        
-        $this->pdo = new PDO("mysql:host=$this->server_name;dbname=$this->db_name", $this->username, $this->password);
+// Select from database
+function selectDatabase($pdo, $tableName, $whereValue, $whereKey, $addon)
+{
+    $query = 'SELECT * FROM '.$tableName;
+    if(!empty($whereValue))
+    {
+        $query .= ' WHERE '.$whereValue.' = "'.$whereKey.'" ';
     }
-    
-    public function get_var($sql) {
-        if(isset($sql)) {
-            $result = $this->pdo->query($sql);
-            
-            $data = $result->fetch();
-            return $data;
+    $sth = $pdo->prepare($query.$addon);
+    $sth->execute();
+    return $sth;
+}
+
+// Insert into database
+function insertDatabase($pdo, $tableName, $arrayValues)
+{
+    $query = 'INSERT INTO '.$tableName.' SET ';
+    $i = 0;
+    foreach($arrayValues as $key => $value)
+    {
+        if($i != 0)
+        {
+            $query .= ', ';
         }
+        $query .= $key.' = "'.$value.'"';
+        $i++;
     }
-    
-    public function get_row($sql) {
-        if(isset($sql)) {
-            $result = $this->pdo->query($sql);
-            
-            $data = $result->fetch();
-            return $data;
+    $sth = $pdo->prepare($query);
+    $sth->execute();
+}
+
+// Update the database
+function updateDatabase($pdo, $tableName, $whereValue, $whereKey, $arrayValues)
+{
+    $query = 'UPDATE '.$tableName.' SET ';
+    $i = 0;
+    foreach($arrayValues as $key => $value)
+    {
+        if($i != 0)
+        {
+            $query .= ', ';
         }
+        $query .= $key.' = "'.$value.'"';
+        $i++;
     }
-    
-    public function get_results($sql) {
-        if(isset($sql)) {
-            $result = $this->pdo->query($sql);
-            
-            $data = array();
-            while($array = $result->fetch()) {
-                array_push($data, $array);
-            }
-            return $data;
-        }
+    $query .= 'WHERE '.$whereValue.' = "'.$whereKey.'"';
+    $sth = $pdo->prepare($query);
+    $sth->execute();
+}
+
+// Delete from database
+function deleteDatabase($pdo, $tableName, $whereValue, $whereKey)
+{
+    $prepareParameters = array($parameters);
+    $query = 'DELETE FROM '.$tableName;
+    if(!empty($whereValue))
+    {
+        $query .= ' WHERE '.$whereValue.' = "'.$whereKey.'"';
     }
-    
-    public function insert($sql) {
-        if(isset($sql)) {
-            $result = $this->pdo->query($sql);
-            $result->execute();
-        }
-    }
-    
-    public function delete_table($sql) {
-        if(isset($sql)) {
-            $result = $this->pdo->query($sql);
-            $result->execute();
-        }
-    }
+    $sth = $pdo->prepare($query);
+    $sth->execute($prepareParameters);
 }
