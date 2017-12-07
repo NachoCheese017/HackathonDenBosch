@@ -3,9 +3,17 @@
     <head>
         <!--INCLUDE META VIA FUNCTION-->
         <title></title>
-        <?php include_once(ABSPATH.'content/public/assets/assetmanager.php'); ?>
+        <?php load_meta(); ?>
     </head>
     <body>
-        <?php require(ABSPATH.$router->direct($uri)); ?>
+        <header>
+            <?php load_header(); ?>
+        </header>
+        <main>
+            <?php require(ABSPATH.$router->direct($uri)); ?>
+        </main>
+        <footer>
+            <?php load_footer(); ?>
+        </footer>
     </body>
 </html>

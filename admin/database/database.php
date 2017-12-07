@@ -18,7 +18,7 @@ class DB {
         $this->pdo = new PDO("mysql:host=$this->server_name;dbname=$this->db_name", $this->username, $this->password);
     }
     
-    public function get_var2($sql) {
+    public function get_var($sql) {
         if(isset($sql)) {
             $result = $this->pdo->query($sql);
             

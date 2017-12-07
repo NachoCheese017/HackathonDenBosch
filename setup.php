@@ -3,6 +3,7 @@
 require(ABSPATH.'admin/classcompiler.php');
 
 require(ABSPATH.'functions.php');
+require(ABSPATH.'admin/core/pagebuild.php');
 
 
 //maakt een nieuw db object naar hackathondenbosch
