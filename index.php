@@ -5,4 +5,3 @@ $webpath = $_SERVER["SERVER_NAME"]."/$website_name/";
 define('ABSPATH', dirname(__FILE__).'/');
 
 require_once(ABSPATH.'setup.php');
-// hallo
