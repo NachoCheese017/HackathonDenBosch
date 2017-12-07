@@ -1,7 +1,6 @@
 <?php
-$website_name = "hackathondenbosch";
+$website_name = "HackathonDenBosch";
 $webpath = $_SERVER["SERVER_NAME"]."/$website_name/";
-
 //Absolute path
 define('ABSPATH', dirname(__FILE__).'/');
 
