@@ -2,7 +2,7 @@
 // Log user in
 function login($Email, $Password, $pdo)
 {
-	$sth = selectDatabase($pdo, 'users', 'Email', $Email, NULL);
+	$sth = selectDatabase($pdo, 'USERS', 'Email', $Email, NULL);
 
 	// Check for users
 	if($row = $sth->fetch())
