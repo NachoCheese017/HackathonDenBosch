@@ -1,13 +1,14 @@
 <?php
+session_start();
+
 //Class compiler
 require(ABSPATH.'admin/classcompiler.php');
 
-require(ABSPATH.'functions.php');
 require(ABSPATH.'admin/core/pagebuild.php');
 
 
 //maakt een nieuw db object naar hackathondenbosch
-$db = new DB('localhost','root','','hackathondenbosch');
+$pdo = ConnectDB();
 
 //Maakt een router object voor pagination
 $router = new Router;
