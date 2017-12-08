@@ -12,6 +12,11 @@
     .header-right {
         width: 25%;
     }
+    
+    /**/
+    .registerfield {
+        width: 500px;
+    }
 }
 
 /*==============================*/
@@ -27,6 +32,11 @@
     }
     .header-right {
         width: 25%;
+    }
+    
+    /**/
+    .registerfield {
+        width: 500px;
     }
 }
 
@@ -44,6 +54,11 @@
     .header-right {
         width: 25%;
     }
+    
+    /**/
+    .registerfield {
+        width: 500px;
+    }
 }
 
 /*==============================*/
@@ -60,6 +75,11 @@
     .header-right {
         width: 50%;
     }
+    
+    /**/
+    .registerfield {
+        width: 300px;
+    }
 }
 
 /*==============================*/
@@ -75,5 +95,10 @@
     }
     .header-right {
         width: 50%;
+    }
+    
+    /**/
+    .registerfield {
+        width: 300px;
     }
 }

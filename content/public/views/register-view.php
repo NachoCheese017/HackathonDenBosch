@@ -1,7 +1,47 @@
-<form action="register-controller.php" method="post">
-	<input type="text" name="user_register_email" placeholder="Email" required><?php if(isset($_POST['register_acc'])){echo $emailErr;} ?><br/>
-	<input type="text" name="user_register_pass" placeholder="Password" required><?php if(isset($_POST['register_acc'])){echo $passErr;} ?><br/>
-	<input type="text" name="user_register_firstname" placeholder="First name"><br/>
-	<input type="text" name="user_register_lastname" placeholder="Last name"><br/>
-	<input type="submit" name="register_acc" value="Register">
-</form>
+<div class="page_wrapper" id="register">
+    <div class="registerfield">
+        <div class="register-msg">
+            Maak hier uw account aan.
+        </div>
+        <form action="register" method="post">
+            <ul class="formlist">
+                <li class="reg_input">
+                    <div class="input-label">
+                        <label for="user_register_email">E-mail</label>
+                    </div>
+                    <input type="text" name="user_register_email" required>
+                </li>
+                <li class="reg_input">
+                    <div class="input-label">
+                        <label for="user_register_email">Password</label>
+                    </div>
+                    <input type="text" name="user_register_pass" required>
+                </li>
+                <li class="reg_input">
+                    <div class="input-label">
+                        <label for="user_register_email">Voornaam</label>
+                    </div>
+                    <input type="text" name="user_register_firstname">
+                </li>
+                <li class="reg_input">
+                    <div class="input-label">
+                        <label for="user_register_email">Achternaam</label>
+                    </div>
+                    <input type="text" name="user_register_lastname">
+                </li>
+                <li class="reg_submit">
+                    <input  class="button1" type="submit" name="register_acc" value="Register">
+                </li>
+            </ul>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+	<?php if(isset($_POST['register_acc'])){echo $emailErr;} ?>
+	<?php if(isset($_POST['register_acc'])){echo $passErr;} ?>
+	
+	
