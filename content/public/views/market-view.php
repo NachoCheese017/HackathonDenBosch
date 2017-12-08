@@ -1,5 +1,6 @@
 <div class="page_wrapper">
-    <div class="filterbar">
-    </div>
+    <!-- <div class="filterbar"> -->
+    <!-- </div> -->
 </div>
-<!--productDisplay($pdo);-->
+<?php
+productDisplay($pdo);

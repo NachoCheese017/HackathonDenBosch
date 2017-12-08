@@ -4,7 +4,7 @@ if(isset($_GET['productid']))
 	$sth = selectDatabase($pdo, 'PRODUCTS_CUSTOMER', 'product_ID', $_GET['productid'], '');
 	if($row = $sth->fetch())
 	{
-		echo 'market_product_ID: '.$row['product_id'];
+		echo 'p_description: '.$row['p_description'];
 	}
 	else
 	{

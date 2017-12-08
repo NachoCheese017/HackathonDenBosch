@@ -75,7 +75,7 @@ function productDisplay($pdo)
 		{
 			$limitRows = ' LIMIT '.$_SESSION['totalPages'];
 		}
-		$sth = selectDatabase($pdo, 'PRODUCT_CUSTOMERS', '', '', $limitRows);
+		$sth = selectDatabase($pdo, 'PRODUCTS_CUSTOMER', '', '', $limitRows);
 		while($row = $sth->fetch())
 		{
 			echo '<a href="product?productid='.$row['product_ID'].'"><h1>TEST</h1></a><input type="hidden" name="favorite_ID" value="'.$row['product_ID'].'"><input type="image" src="" alt="Favorite" value="like">';
