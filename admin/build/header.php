@@ -14,14 +14,14 @@
             <form action="home" method="post">
                 <div class="header-form-login" id="login">
                     <div class="user-name">
-                        <input type="text" name="user_inlog_name">
+                        <input type="text" name="user_login_name">
                     </div>
                     <div class="user-pass">
-                        <input type="text" name="user_inlog_pass">
+                        <input type="text" name="user_login_pass">
                     </div>
                     <div class="user-login-btm">
                         <div class="user-submit">
-                            <input class="button1" type="submit" name="user_inlog_submit" value="Login">
+                            <input class="button1" type="submit" name="user_login_submit" value="Login">
                         </div>
                         <div class="user-forgot">
                             <a href="home">Forgot?</a>
