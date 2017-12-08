@@ -85,7 +85,9 @@ function productDisplay($pdo, $addon)
 	$sth = selectDatabase($pdo, 'PRODUCTS', '', '', $addon.$limitRows);
 	while($row = $sth->fetch())
 	{
+		echo '<a href="product?productid='.$row['product_ID'].'">';
 		marketProduct($row);
+		echo '</a>';
 	}
 }
 

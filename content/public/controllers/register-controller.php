@@ -57,7 +57,7 @@ if(!loginCheck($pdo))
 			$arrayValues['u_firstname'] = $_POST['user_register_firstname'];
 			$arrayValues['u_lastname'] = $_POST['user_register_lastname'];
 			$sth = insertDatabase($pdo, 'USERS', $arrayValues);
-			
+
 			// Save user into ACCOUNTS
 			$arrayValues['setting_ID'] = $ID;
 			$arrayValues['p_show_email'] = 0;

@@ -1,10 +1,10 @@
 <?php
 if(isset($_GET['productid']))
 {
-	$sth = selectDatabase($pdo, 'PRODUCTS_CUSTOMER', 'product_ID', $_GET['productid'], '');
+	$sth = selectDatabase($pdo, 'PRODUCTS', 'product_ID', $_GET['productid'], '');
 	if($row = $sth->fetch())
 	{
-		echo 'p_description: '.$row['p_description'];
+		echo 'product_ID: '.$row['product_ID'];
 	}
 	else
 	{

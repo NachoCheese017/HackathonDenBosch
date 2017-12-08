@@ -84,9 +84,8 @@ if(!loginCheck($pdo))
 				else
 				{
 					// Password incorrect
-					// echo '<div id="login_fail">Failed to login.</div>';
+					echo '<div id="login_fail">Failed to login.</div>';
 				}
-				echo $row['u_password'];
 			}
 			else
 			{
