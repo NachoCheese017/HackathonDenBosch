@@ -1,18 +1,17 @@
 <?php
-if(isset($_GET['productID']))
+if(isset($_GET['productid']))
 {
-	echo '<script>alert('.$_GET['productID'].');</script>';
-	// $sth = selectDatabase($pdo, 'MARKET_OFFERS', 'product_ID', $_GET['productID'], '');
-	// if($row = $sth->fetch())
-	// {
-	// 	echo 'market_product_ID: '.$row['product_ID'];
-	// }
-	// else
-	// {
-	// 	echo 'This product could not be found.';
-	// }
+	$sth = selectDatabase($pdo, 'MARKET_OFFERS', 'product_ID', $_GET['productid'], '');
+	if($row = $sth->fetch())
+	{
+		echo 'market_product_ID: '.$row['product_id'];
+	}
+	else
+	{
+		echo 'This product could not be found.';
+	}
 }
 else
 {
-	echo '<script>alert();</script>';
+	echo '<script>window.location.href = "'.ABSPATH.'";</script>';
 }

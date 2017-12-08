@@ -94,7 +94,7 @@ function productDisplay($pdo)
 		$sth = selectDatabase($pdo, 'MARKET_OFFERS', '', '', $limitRows);
 		while($row = $sth->fetch())
 		{
-			echo '<a href="product?productID='.$row['ID'].'">ID: '.$row['ID'].'</a><input type="hidden" name="favorite_ID" value="'.$row['ID'].'"><input type="image" src="" alt="Favorite" value="like">';
+			echo '<a href="product?productid='.$row['ID'].'"></a><input type="hidden" name="favorite_ID" value="'.$row['ID'].'"><input type="image" src="" alt="Favorite" value="like">';
 		}
 		?>
 	</form>
