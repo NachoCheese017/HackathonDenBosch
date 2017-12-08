@@ -111,6 +111,20 @@ header {
     float: left;
 }
 
+.header-welcome {
+    width: 50%;
+    text-align: right;
+    padding-right: 10px;
+    font-size: 17px;
+    float: left;
+}
+.header-logout {
+    width: 50%;
+    text-align: left;
+    padding-left: 10px;
+    float: left;
+}
+
 /*FOOTER*/
 footer {
     height: 35px;
@@ -137,13 +151,40 @@ footer {
 .button1 {
     border: 1px solid #2cc75c;
     background-color: #2cc75c;
+    line-height: inherit;
+    text-align: center;
     color: #fff;
     border-radius: 5px;
     transition: background-color .2s, color .2s;
 }
+.button1 {
+    color: #fff;
+}
 .button1:hover,.button1:active {
     background-color: transparent;
     color: #2cc75c;
+}
+.button1:hover a,.button1:active a {
+    color: #2cc75c;
+}
+.button2 {
+    border: 3px solid #375ba0;
+    background-color: #375ba0;
+    line-height: inherit;
+    text-align: center;
+    color: #fff;
+    border-radius: 12.5px;
+    transition: background-color .2s, color .2s;
+}
+.button2 a {
+    color: #fff;
+}
+.button2:hover,.button2:active {
+    background-color: transparent;
+    color: #375ba0;
+}
+.button2:hover a,.button2:active a {
+    color: #375ba0;
 }
 
 /*MAIN PAGE LAYOUT*/
@@ -167,11 +208,27 @@ main {
     height: 100%;
 }
 
+/*HOME PAGE*/
+.home-banner {
+    width: 100%;
+    background-image: url(../images/bg2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom center;
+}
+.button-market,.button-register,.button-userprofile {
+    width: 250px;
+    height: 50px;
+    line-height: 40px;
+    font-size: 25px;
+}
+
 /*REGISTER PAGE*/
 .register {
     background-image: url(../images/bg1.png);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: bottom center;
 }
 .register-msg {
     width: 100%;

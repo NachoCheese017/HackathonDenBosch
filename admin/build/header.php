@@ -42,7 +42,7 @@
                 <p>Hello user</p>
             </div>
             <div class="header-logout">
-                
+                <a href="logout">Uitloggen</a>
             </div>
             <?php } ?>
         </div>

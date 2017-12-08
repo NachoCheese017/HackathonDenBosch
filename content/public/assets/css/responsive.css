@@ -13,6 +13,11 @@
         width: 25%;
     }
     
+    /*HOME PAGE*/
+    .home-banner {
+        height: 500px;
+    }
+    
     /**/
     .registerfield {
         width: 500px;
@@ -32,6 +37,11 @@
     }
     .header-right {
         width: 25%;
+    }
+    
+    /*HOME PAGE*/
+    .home-banner {
+        height: 500px;
     }
     
     /**/
@@ -55,6 +65,11 @@
         width: 25%;
     }
     
+    /*HOME PAGE*/
+    .home-banner {
+        height: 300px;
+    }
+    
     /**/
     .registerfield {
         width: 500px;
@@ -76,6 +91,11 @@
         width: 50%;
     }
     
+    /*HOME PAGE*/
+    .home-banner {
+        height: 300px;
+    }
+    
     /**/
     .registerfield {
         width: 300px;
@@ -95,6 +115,11 @@
     }
     .header-right {
         width: 50%;
+    }
+    
+    /*HOME PAGE*/
+    .home-banner {
+        height: 300px;
     }
     
     /**/
