@@ -79,13 +79,14 @@ if(!loginCheck($pdo))
 					$_SESSION['accString'] = hash('sha512', $Password.$_SERVER['HTTP_USER_AGENT']);
 
 					// Login successful
-					echo '<script>location.reload();</script>';
+					header("Refresh:0");
 				}
 				else
 				{
 					// Password incorrect
-					echo '<div id="login_fail">Failed to login.</div>';
+					// echo '<div id="login_fail">Failed to login.</div>';
 				}
+				echo $row['u_password'];
 			}
 			else
 			{
