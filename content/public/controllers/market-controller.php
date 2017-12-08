@@ -67,7 +67,11 @@ function productDisplay($pdo)
 	?>
 	<form action="" method="post">
 		Total products displayed:
-		<input type="number" name="changeTotalPages" value="<?php echo $_SESSION['totalPages']; ?>" min="1" max="45">
+		<select name="changeTotalPages">
+			<option value="15" <?php if($_SESSION['totalPages'] == 15){echo 'selected';} ?>>15</option>
+			<option value="30" <?php if($_SESSION['totalPages'] == 30){echo 'selected';} ?>>30</option>
+			<option value="45" <?php if($_SESSION['totalPages'] == 45){echo 'selected';} ?>>45</option>
+		</select>
 		<input type="submit" name="changeTotalPagesBtn" value="Apply">
 		<?php
 		if($_SESSION['pageNmb'] != 1)

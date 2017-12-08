@@ -69,7 +69,7 @@ if(!loginCheck($pdo))
 			$arrayValues['level_ID'] = 10;
 			$arrayValues['setting_ID'] = $ID;
 			$sth = insertDatabase($pdo, 'ACCOUNTS', $arrayValues);
-			// echo '<script>window.location.href = "home";</script>';
+			echo '<script>window.location.href = "home";</script>';
 		}
 		else
 		{
