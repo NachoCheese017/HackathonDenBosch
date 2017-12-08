@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `hackathondenbosch`.`HOUSES` (
   `house_ID` INT NOT NULL,
   `h_city` VARCHAR(45) NULL,
   `h_zipcode` VARCHAR(45) NULL,
-  `h_adres` VARCHAR(45) NULL,
+  `h_address` VARCHAR(45) NULL,
   `h_rent_buy` VARCHAR(45) NULL,
   `h_type` INT NULL,
   PRIMARY KEY (`house_ID`),
@@ -76,9 +76,9 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `hackathondenbosch`.`SETTINGS` (
   `setting_ID` INT NOT NULL,
-  `p_email` VARCHAR(45) NULL,
-  `p_name` VARCHAR(45) NULL,
-  `p_location` VARCHAR(45) NULL,
+  `p_show_email` VARCHAR(45) NULL,
+  `p_show_name` VARCHAR(45) NULL,
+  `p_show_location` VARCHAR(45) NULL,
   PRIMARY KEY (`setting_ID`))
 ENGINE = InnoDB;
 
@@ -100,23 +100,104 @@ CREATE TABLE IF NOT EXISTS `hackathondenbosch`.`ACCOUNTS` (
     FOREIGN KEY (`house_ID`)
     REFERENCES `hackathondenbosch`.`HOUSES` (`house_ID`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+    ON UPDATE CASCADE,
   CONSTRAINT `user_id`
     FOREIGN KEY (`user_ID`)
     REFERENCES `hackathondenbosch`.`USERS` (`user_ID`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+    ON UPDATE CASCADE,
   CONSTRAINT `level_id`
     FOREIGN KEY (`level_ID`)
     REFERENCES `hackathondenbosch`.`LEVELS` (`level_ID`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+    ON UPDATE CASCADE,
   CONSTRAINT `setting_id`
     FOREIGN KEY (`setting_ID`)
     REFERENCES `hackathondenbosch`.`SETTINGS` (`setting_ID`)
     ON DELETE NO ACTION
+    ON UPDATE CASCADE)
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `hackathondenbosch`.`PRODUCTS_TEMPLATE`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `hackathondenbosch`.`PRODUCTS_TEMPLATE` (
+  `template_ID` INT NOT NULL,
+  `t_name` VARCHAR(45) NULL,
+  `t_description` VARCHAR(45) NULL,
+  PRIMARY KEY (`template_ID`))
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `hackathondenbosch`.`PRODUCT_CUSTOMER`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `hackathondenbosch`.`PRODUCTS_CUSTOMER` (
+  `product_ID` INT NOT NULL,
+  `template_ID` INT NOT NULL,
+  `p_description` VARCHAR(45) NULL,
+  PRIMARY KEY (`product_ID`, `template_ID`),
+  INDEX `template_id_idx` (`template_ID` ASC),
+  CONSTRAINT `template_id`
+    FOREIGN KEY (`template_ID`)
+    REFERENCES `hackathondenbosch`.`PRODUCTS_TEMPLATE` (`template_ID`)
+    ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `hackathondenbosch`.`SETTINGS` default data
+-- -----------------------------------------------------
+INSERT INTO `hackathondenbosch`.`SETTINGS`
+(setting_ID, p_show_name, p_show_email, p_show_location)
+VALUES (0, 0, 0, 0);
+-- -----------------------------------------------------
+-- Table `hackathondenbosch`.`LEVELS` default data
+-- -----------------------------------------------------
+INSERT INTO `hackathondenbosch`.`LEVELS`
+(level_ID, l_name)
+VALUES (0, 'guest'),(10, 'customer'),(20, 'employee'),(30,'admin');
+-- -----------------------------------------------------
+-- Table `hackathondenbosch`.`USERS` default data
+-- -----------------------------------------------------
+INSERT INTO `hackathondenbosch`.`USERS`
+(user_ID, u_mail, u_password, u_salt, u_firstname, u_lastname)
+VALUES (0, 'creator@gmail.com', '6110a20725c76422b303c9afd8528998b0eb40c49ba04', '720e42d2f61ee650a68df8bd5e3528c4c5ed2b9e2deac', 'creator', 'lastname');
+
+-- -----------------------------------------------------
+-- Table `hackathondenbosch`.`HOUSE_TYPES` default data
+-- -----------------------------------------------------
+INSERT INTO `hackathondenbosch`.`HOUSE_TYPES`
+(house_type_ID, house_name)
+VALUES (0, 'DEFAULT'), (1, 'HOUSE');
+
+-- -----------------------------------------------------
+-- Table `hackathondenbosch`.`HOUSES` default data
+-- -----------------------------------------------------
+INSERT INTO `hackathondenbosch`.`HOUSES`
+(house_ID, h_city, h_zipcode, h_address, h_rent_buy, h_type)
+VALUES (0, 'DEFAULT', 'DEFAULT', 'DEFAULT', 'DEFAULT', 0);
+
+-- -----------------------------------------------------
+-- Table `hackathondenbosch`.`ACCOUNTS` default data
+-- -----------------------------------------------------
+INSERT INTO `hackathondenbosch`.`ACCOUNTS`
+(user_ID, house_ID, level_ID, setting_ID, h_occupants)
+VALUES (0, 0, 10, 0, 4);
+
+-- -----------------------------------------------------
+-- Table `hackathondenbosch`.`PRODUCTS_TEMPLATE` default data
+-- -----------------------------------------------------
+INSERT INTO `hackathondenbosch`.`PRODUCTS_TEMPLATE`
+(template_ID, t_name, t_description)
+VALUES (0, 'cv', 'cv ketel'), (1, 'kraan', 'een kraan');
+
+-- -----------------------------------------------------
+-- Table `hackathondenbosch`.`PRODUCTS_CUSTOMER` default data
+-- -----------------------------------------------------
+INSERT INTO `hackathondenbosch`.`PRODUCTS_CUSTOMER`
+(product_ID, template_ID, p_description)
+VALUES (0, 0, 'dit is een cv ketel'), (1, 0, 'dit is nog een cvketel'), (2, 0, 'dit is de derde cvketel'), (3, 0, 'dit is de vierde cvketel'),
+(4, 1, 'mooie kraan'), (5, 1, 'tweede kraan');
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
