@@ -1,8 +1,5 @@
 <?php
-function marketProduct($row)
-{
-	echo '<h1>TEST</h1>';
-}
+
 
 function productDisplay($pdo)
 {
@@ -87,9 +84,7 @@ function productDisplay($pdo)
 		$sth = selectDatabase($pdo, 'PRODUCTS_CUSTOMER', '', '', $limitRows);
 		while($row = $sth->fetch())
 		{
-			echo '<a href="product?productid='.$row['product_ID'].'">';
 			marketProduct($row);
-			echo '</a><input type="hidden" name="favorite_ID" value="'.$row['product_ID'].'"><input type="image" src="" alt="Favorite" value="like">';
 		}
 		?>
 	</form>
