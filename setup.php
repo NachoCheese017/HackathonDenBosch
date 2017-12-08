@@ -19,8 +19,6 @@ if(!array_key_exists($uri, $router->routes)) {
     $uri = '';
 }
 
-loginCheck();
-
 //FIX ERROR
 //$uri = substr($uri, 0, strpos($uri, '?'));
 

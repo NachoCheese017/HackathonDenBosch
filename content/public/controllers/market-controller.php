@@ -46,22 +46,42 @@ function productDisplay($pdo)
 		$_SESSION['pageNmb'] = $_POST['changePageNmb'];
 		echo '<script>window.location.href = "index.php?PageNr=994&adminPage=2";</script>';
 	}
-	if(isset($_POST['changeTotalPages']))
+	if(isset($_POST['changeTotalPagesBtn']))
 	{
 		$_SESSION['totalPages'] = $_POST['changeTotalPages'];
 	}
+
+	if(empty($_SESSION['pageNmb']))
+	{
+		$_SESSION['pageNmb'] = 1;
+	}
+	if(empty($_SESSION['totalPages']))
+	{
+		$_SESSION['totalPages'] = 30;
+	}
+
+	// Save into favorite
+	if(isset($_POST['favorite_ID']))
+	{
+		$sth = selectDatabase($pdo, 'FAVORITES', '', '', 'ORDER BY favorite_ID DESC')
+		$sth->execute();
+		$ID = -1;
+		if($row = $sth->fetch())
+		{
+			$ID = $row['ID'];
+		}
+		$ID++;
+		$arrayValues['favorite_ID'] = $ID;
+		$arrayValues['product_ID'] = $_POST['favorite_ID'];
+		$sth = insertDatabase($pdo, 'FAVORITES', $arrayValues);
+		echo '<script>window.location.href = "'.ABSPATH.'content/public/controllers/product-controllers.php";</script>';
+	}
 	?>
 	<form action="" method="post">
-		<input type="number" name="changeTotalPages" min="1" max="45">
+		Total products displayed:
+		<input type="number" name="changeTotalPages" value="<?php echo $_SESSION['totalPages']; ?>" min="1" max="45">
+		<input type="submit" name="changeTotalPagesBtn" value="Apply">
 		<?php
-		if(empty($_SESSION['pageNmb']))
-		{
-			$_SESSION['pageNmb'] = 1;
-		}
-		if(empty($_SESSION['totalPages']))
-		{
-			$_SESSION['totalPages'] = 30;
-		}
 		if($_SESSION['pageNmb'] != 1)
 		{
 			$multNumb = $_SESSION['pageNmb'] - 1;
@@ -72,10 +92,10 @@ function productDisplay($pdo)
 		{
 			$limitRows = ' LIMIT '.$_SESSION['totalPages'];
 		}
-		$sth = selectDatabase($pdo, 'market_offers', '', '', $limitRows);
+		$sth = selectDatabase($pdo, 'MARKET_OFFERS', '', '', $limitRows);
 		while($row = $sth->fetch())
 		{
-			echo $row['ID'];
+			echo '<a href="'.ABSPATH.'content/public/controllers/product-controllers.php">ID: '.$row['ID'].'</a><input type="hidden" name="favorite_ID" value="'.$row['ID'].'"><input type="image" src="" alt="Favorite" value="like">';
 		}
 		?>
 	</form>
@@ -84,7 +104,7 @@ function productDisplay($pdo)
 		if($totalPages > 0)
 		{
 			// Page navigator
-			echo '<form action="index.php?PageNr=994&adminPage=2" method="post" autocomplete="off">';
+			echo '<form action="" method="post" autocomplete="off">';
 			if($_SESSION['pageNmb'] > 1)
 			{
 				?>
