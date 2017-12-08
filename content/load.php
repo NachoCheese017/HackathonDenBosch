@@ -11,9 +11,10 @@
         </header>
         <main>
             <?php require(ABSPATH.$router->direct($uri)); ?>
+            <footer>
+                <?php load_footer(); ?>
+            </footer>
         </main>
-        <footer>
-            <?php load_footer(); ?>
-        </footer>
+
     </body>
 </html>
