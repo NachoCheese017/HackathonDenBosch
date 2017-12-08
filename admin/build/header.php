@@ -12,6 +12,7 @@
     </div>
     <div class="header-right">
         <div class="header-user">
+            <?php if(!loginCheck($pdo)) { ?>
             <div class="header-login">
                 <p id="logintoggle">Inloggen</p>
             </div>
@@ -36,6 +37,14 @@
                     </div>
                 </div>
             </form>
+            <?php } if(logincheck($pdo)) { ?>
+            <div class="header-welcome">
+                <p>Hello user</p>
+            </div>
+            <div class="header-logout">
+                
+            </div>
+            <?php } ?>
         </div>
     </div>
 </div>

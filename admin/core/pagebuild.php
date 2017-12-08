@@ -1,6 +1,7 @@
 <?php
 
 function load_header() {
+    global $pdo;
     include(ABSPATH.'admin/build/header.php');
 }
 
