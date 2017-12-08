@@ -9,8 +9,12 @@
         <header>
             <?php load_header(); ?>
         </header>
-        <main>
+        <main class="<?= $uri ?>">
+            <div class="mainfix">
+            </div>
             <?php require(ABSPATH.$router->direct($uri)); ?>
+            <div class="mainfix">
+            </div>
         </main>
         <footer>
             <?php load_footer(); ?>
