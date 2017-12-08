@@ -2,33 +2,78 @@
 /*=====LARGE DESKTOP DEVICES====*/
 /*==============================*/
 @media screen and (min-width: 1200px) {
-    
+    /*HEADER*/
+    .header-left {
+        width: 25%;
+    }
+    .header-center {
+        width: 50%;
+    }
+    .header-right {
+        width: 25%;
+    }
 }
 
 /*==============================*/
 /*====MEDIUM DESKTOP DEVICES====*/
 /*==============================*/
 @media screen and (min-width: 960px) and (max-width: 1199px) {
-    
+    /*HEADER*/
+    .header-left {
+        width: 25%;
+    }
+    .header-center {
+        width: 50%;
+    }
+    .header-right {
+        width: 25%;
+    }
 }
 
 /*==============================*/
 /*====MEDIUM DEVICES TABLETS====*/
 /*==============================*/
 @media screen and (min-width: 660px) and (max-width: 959px) {
-    
+    /*HEADER*/
+    .header-left {
+        width: 25%;
+    }
+    .header-center {
+        width: 50%;
+    }
+    .header-right {
+        width: 25%;
+    }
 }
 
 /*==============================*/
 /*=====MEDIUM DEVICES MOBILE====*/
 /*==============================*/
 @media screen and (min-width: 480px) and (max-width: 659px) {
-    
+    /*HEADER*/
+    .header-left {
+        width: 50%;
+    }
+    .header-center {
+        display: none;
+    }
+    .header-right {
+        width: 50%;
+    }
 }
 
 /*==============================*/
 /*=====SMALL DEVICES MOBILE=====*/
 /*==============================*/
 @media screen and (max-width: 479px) {
-    
+    /*HEADER*/
+    .header-left {
+        width: 50%;
+    }
+    .header-center {
+        display: none
+    }
+    .header-right {
+        width: 50%;
+    }
 }
