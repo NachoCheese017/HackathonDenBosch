@@ -25,6 +25,7 @@ function login($pdo, $Email, $Password)
 			}
 
 			if(!$errCheck)
+			{
 				$sth = selectDatabase($pdo, 'USERS', 'u_mail', $Email, '');
 
 				// Check for users
