@@ -2,7 +2,7 @@
 // Log user in
 function login($pdo)
 {
-	if(!loginCheck($pdo))
+	if(loginCheck($pdo))
 	{
 		if(isset($_POST['user_login_submit']))
 		{
