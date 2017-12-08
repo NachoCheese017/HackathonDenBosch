@@ -25,7 +25,7 @@
         </div>
         <div class="products-field">
             <div class="cards-field">
-                <?php productDisplay($pdo); ?>
+                <?php productDisplay($pdo, $addon); ?>
             </div>
         </div>
     </div>

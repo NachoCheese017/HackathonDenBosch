@@ -3,7 +3,7 @@
 if(isset($_POST['product_search_submit']))
 {
 	$search = $_POST['product_search_input'];
-	$addon = 'WHERE p_type LIKE %'.$search.'% OR p_brand LIKE %'.$search.'% OR p_name LIKE %'.$search.'%';
+	$addon = ' WHERE p_type LIKE %'.$search.'% OR p_brand LIKE %'.$search.'% OR p_name LIKE %'.$search.'%';
 }
 else
 {
@@ -70,7 +70,7 @@ $sth->execute();
 $totalPages = $sth->fetchColumn();
 $totalPages = ceil($totalPages / 20);
 
-function productDisplay($pdo)
+function productDisplay($pdo, $addon)
 {
 	if($_SESSION['pageNmb'] != 1)
 	{
