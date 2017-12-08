@@ -1,11 +1,14 @@
 <?php
 // Log user in
-function login($pdo, $Email, $Password)
+function login($pdo)
 {
 	if(!loginCheck($pdo))
 	{
 		if(isset($_POST['user_login_submit']))
 		{
+			$Email = $_POST['user_login_name'];
+			$Password = $_POST['user_login_pass'];
+
 			// auxiliary variables
 			$emailErr = $passErr = false;
 			$errCheck = false;

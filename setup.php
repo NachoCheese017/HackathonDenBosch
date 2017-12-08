@@ -20,7 +20,7 @@ if(!array_key_exists($uri, $router->routes)) {
 }
 
 // Check for user login
-login($pdo, $_POST['user_login_name'], $_POST['user_login_pass']);
+login($pdo);
 
 //FIX ERROR
 //$uri = substr($uri, 0, strpos($uri, '?'));
