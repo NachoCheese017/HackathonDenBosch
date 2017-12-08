@@ -37,7 +37,7 @@
                     </div>
                 </div>
             </form>
-            <?php } if(logincheck($pdo)) { ?>
+            <?php } else { ?>
             <div class="header-welcome">
                 <p>Hello user</p>
             </div>
