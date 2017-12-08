@@ -390,14 +390,12 @@ main {
     border: 2px solid #acacac;
     border-radius: 7px;
 }
-.card-content {
-    width: 100%;
-    height: 191.75px;
+.product-card:hover button2 {
+    background-color: rgba(255, 255, 255, 0.85);
+    color: #375ba0;
 }
 .product-name {
     text-align: center;
     border-bottom: 1px solid #acacac;
 }
-.readmore {
-    border-radius: 5px
-}
+.readmore
