@@ -1,7 +1,11 @@
 <div class="header">
     <div class="header-left">
         <div class="header-logo">
-            <img src="content/public/assets/images/logo.png">
+            <div>
+                <a class="header-homelink" href="home">
+                    <img src="content/public/assets/images/logo.png">
+                </a>
+            </div>
         </div>
     </div>
     <div class="header-center">

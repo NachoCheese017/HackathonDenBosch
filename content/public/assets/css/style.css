@@ -29,8 +29,13 @@ header {
     height: 100%;
     width: 100%;
 }
-.header-logo img {
+.header-logo .header-homelink {
+    display: block;
+    height: 45px;
+    width: 45px;
     padding-left: 30px;
+}
+.header-logo img {
     height: 100%;
 }
 
@@ -206,7 +211,7 @@ main {
     width: 225px;
     height: 35px;
     padding-left: 3px;
-    font-size: 20px;
+    font-size: 15px;
     border: 1px solid #6f6f6f;
 }
 .formlist li.reg_submit {
