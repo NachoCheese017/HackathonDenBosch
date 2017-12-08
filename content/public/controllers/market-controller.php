@@ -1,93 +1,84 @@
 <?php
+if(isset($_POST['navBtn1']))
+{
+	$_SESSION['pageNmb'] = $_POST['navBtn1'];
+	echo '<script>window.location.href = "market-controller";</script>';
+}
+elseif(isset($_POST['navBtn2']))
+{
+	$_SESSION['pageNmb'] = $_POST['navBtn2'];
+	echo '<script>window.location.href = "market-controller";</script>';
+}
+elseif(isset($_POST['navBtn3']))
+{
+	$_SESSION['pageNmb'] = $_POST['navBtn3'];
+	echo '<script>window.location.href = "market-controller";</script>';
+}
+elseif(isset($_POST['next']))
+{
+	$_SESSION['pageNmb'] = $_SESSION['pageNmb'] + 1;
+	echo '<script>window.location.href = "market-controller";</script>';
+}
+elseif(isset($_POST['prev']))
+{
+	$_SESSION['pageNmb'] = $_SESSION['pageNmb'] - 1;
+	echo '<script>window.location.href = "market-controller";</script>';
+}
+elseif(isset($_POST['end']))
+{
+	$_SESSION['pageNmb'] = $totalPages;
+	echo '<script>window.location.href = "market-controller";</script>';
+}
+elseif(isset($_POST['beg']))
+{
+	$_SESSION['pageNmb'] = 1;
+	echo '<script>window.location.href = "market-controller";</script>';
+}
+elseif(isset($_POST['changePageNmb']))
+{
+	$_SESSION['pageNmb'] = $_POST['changePageNmb'];
+	echo '<script>window.location.href = "market-controller";</script>';
+}
+if(isset($_POST['changeTotalPagesBtn']))
+{
+	$_SESSION['totalPages'] = $_POST['changeTotalPages'];
+}
 
+if(empty($_SESSION['pageNmb']))
+{
+	$_SESSION['pageNmb'] = 1;
+}
+if(empty($_SESSION['totalPages']))
+{
+	$_SESSION['totalPages'] = 30;
+}
+
+$sth = $pdo->prepare('SELECT COUNT(*) FROM template');
+$sth->execute();
+$totalPages = $sth->fetchColumn();
+$totalPages = ceil($totalPages / 20);
 
 function productDisplay($pdo)
 {
-	// Product pages
-	$sth = $pdo->prepare('SELECT COUNT(*) FROM template');
-	$sth->execute();
-	$totalPages = $sth->fetchColumn();
-	$totalPages = ceil($totalPages / 20);
-	if(isset($_POST['navBtn1']))
+	if($_SESSION['pageNmb'] != 1)
 	{
-		$_SESSION['pageNmb'] = $_POST['navBtn1'];
-		echo '<script>window.location.href = "market-controller";</script>';
+		$multNumb = $_SESSION['pageNmb'] - 1;
+		$totalRows = $multNumb * $_SESSION['totalPages'];
+		$limitRows = ' LIMIT '.$_SESSION['totalPages'].' OFFSET '.$totalRows;
 	}
-	elseif(isset($_POST['navBtn2']))
+	else
 	{
-		$_SESSION['pageNmb'] = $_POST['navBtn2'];
-		echo '<script>window.location.href = "market-controller";</script>';
+		$limitRows = ' LIMIT '.$_SESSION['totalPages'];
 	}
-	elseif(isset($_POST['navBtn3']))
+	$sth = selectDatabase($pdo, 'PRODUCTS_CUSTOMER', '', '', $limitRows);
+	while($row = $sth->fetch())
 	{
-		$_SESSION['pageNmb'] = $_POST['navBtn3'];
-		echo '<script>window.location.href = "market-controller";</script>';
+		marketProduct($row);
 	}
-	elseif(isset($_POST['next']))
-	{
-		$_SESSION['pageNmb'] = $_SESSION['pageNmb'] + 1;
-		echo '<script>window.location.href = "market-controller";</script>';
-	}
-	elseif(isset($_POST['prev']))
-	{
-		$_SESSION['pageNmb'] = $_SESSION['pageNmb'] - 1;
-		echo '<script>window.location.href = "market-controller";</script>';
-	}
-	elseif(isset($_POST['end']))
-	{
-		$_SESSION['pageNmb'] = $totalPages;
-		echo '<script>window.location.href = "market-controller";</script>';
-	}
-	elseif(isset($_POST['beg']))
-	{
-		$_SESSION['pageNmb'] = 1;
-		echo '<script>window.location.href = "market-controller";</script>';
-	}
-	elseif(isset($_POST['changePageNmb']))
-	{
-		$_SESSION['pageNmb'] = $_POST['changePageNmb'];
-		echo '<script>window.location.href = "market-controller";</script>';
-	}
-	if(isset($_POST['changeTotalPagesBtn']))
-	{
-		$_SESSION['totalPages'] = $_POST['changeTotalPages'];
-	}
+}
 
-	if(empty($_SESSION['pageNmb']))
-	{
-		$_SESSION['pageNmb'] = 1;
-	}
-	if(empty($_SESSION['totalPages']))
-	{
-		$_SESSION['totalPages'] = 30;
-	}
+function pageNav($totalPages){
 	?>
-	<form action="" method="post">
-		Total products displayed:
-		<select name="changeTotalPages">
-			<option value="15" <?php if($_SESSION['totalPages'] == 15){echo 'selected';} ?>>15</option>
-			<option value="30" <?php if($_SESSION['totalPages'] == 30){echo 'selected';} ?>>30</option>
-			<option value="45" <?php if($_SESSION['totalPages'] == 45){echo 'selected';} ?>>45</option>
-		</select>
-		<input type="submit" name="changeTotalPagesBtn" value="Apply">
-		<?php
-		if($_SESSION['pageNmb'] != 1)
-		{
-			$multNumb = $_SESSION['pageNmb'] - 1;
-			$totalRows = $multNumb * $_SESSION['totalPages'];
-			$limitRows = ' LIMIT '.$_SESSION['totalPages'].' OFFSET '.$totalRows;
-		}
-		else
-		{
-			$limitRows = ' LIMIT '.$_SESSION['totalPages'];
-		}
-		$sth = selectDatabase($pdo, 'PRODUCTS_CUSTOMER', '', '', $limitRows);
-		while($row = $sth->fetch())
-		{
-			marketProduct($row);
-		}
-		?>
-	</form>
 	<div id="pageNavigator">
 		<?php
 		if($totalPages > 0)
@@ -169,4 +160,5 @@ function productDisplay($pdo)
 	</div>
 	<?php
 }
+
 include(ABSPATH.'content/public/views/market-view.php');
