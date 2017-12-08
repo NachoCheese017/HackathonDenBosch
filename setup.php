@@ -5,6 +5,7 @@ session_start();
 require(ABSPATH.'admin/classcompiler.php');
 require(ABSPATH.'admin/database/database.php');
 require(ABSPATH.'admin/core/pagebuild.php');
+require(ABSPATH.'admin/core/marketproduct.php');
 
 //maakt een nieuw db object naar hackathondenbosch
 $pdo = ConnectDB();
