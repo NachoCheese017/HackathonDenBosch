@@ -6,11 +6,11 @@ function loginCheck($pdo)
 	if(isset($_SESSION['accID']) AND isset($_SESSION['accEmail']) AND isset($_SESSION['accString']))
 	{
 		// Retreive user info
-		$sth = selectDatabase($pdo, 'users', 'ID', $_SESSION['accID'], '');
+		$sth = selectDatabase($pdo, 'USERS', 'user_ID', $_SESSION['accID'], '');
 		if($row = $sth->fetch())
 		{
 			// Create password string
-			$loginCheck = hash('sha512', $row['Password'].$_SERVER['HTTP_USER_AGENT']);
+			$loginCheck = hash('sha512', $row['u_password'].$_SERVER['HTTP_USER_AGENT']);
 
 			// Check if created password string matches session
 			if($loginCheck == $_SESSION['accString'])
