@@ -9,42 +9,42 @@ function productDisplay($pdo)
 	if(isset($_POST['navBtn1']))
 	{
 		$_SESSION['pageNmb'] = $_POST['navBtn1'];
-		echo '<script>window.location.href = "index.php?PageNr=994&adminPage=2";</script>';
+		echo '<script>window.location.href = "market-controller";</script>';
 	}
 	elseif(isset($_POST['navBtn2']))
 	{
 		$_SESSION['pageNmb'] = $_POST['navBtn2'];
-		echo '<script>window.location.href = "index.php?PageNr=994&adminPage=2";</script>';
+		echo '<script>window.location.href = "market-controller";</script>';
 	}
 	elseif(isset($_POST['navBtn3']))
 	{
 		$_SESSION['pageNmb'] = $_POST['navBtn3'];
-		echo '<script>window.location.href = "index.php?PageNr=994&adminPage=2";</script>';
+		echo '<script>window.location.href = "market-controller";</script>';
 	}
 	elseif(isset($_POST['next']))
 	{
 		$_SESSION['pageNmb'] = $_SESSION['pageNmb'] + 1;
-		echo '<script>window.location.href = "index.php?PageNr=994&adminPage=2";</script>';
+		echo '<script>window.location.href = "market-controller";</script>';
 	}
 	elseif(isset($_POST['prev']))
 	{
 		$_SESSION['pageNmb'] = $_SESSION['pageNmb'] - 1;
-		echo '<script>window.location.href = "index.php?PageNr=994&adminPage=2";</script>';
+		echo '<script>window.location.href = "market-controller";</script>';
 	}
 	elseif(isset($_POST['end']))
 	{
 		$_SESSION['pageNmb'] = $totalPages;
-		echo '<script>window.location.href = "index.php?PageNr=994&adminPage=2";</script>';
+		echo '<script>window.location.href = "market-controller";</script>';
 	}
 	elseif(isset($_POST['beg']))
 	{
 		$_SESSION['pageNmb'] = 1;
-		echo '<script>window.location.href = "index.php?PageNr=994&adminPage=2";</script>';
+		echo '<script>window.location.href = "market-controller";</script>';
 	}
 	elseif(isset($_POST['changePageNmb']))
 	{
 		$_SESSION['pageNmb'] = $_POST['changePageNmb'];
-		echo '<script>window.location.href = "index.php?PageNr=994&adminPage=2";</script>';
+		echo '<script>window.location.href = "market-controller";</script>';
 	}
 	if(isset($_POST['changeTotalPagesBtn']))
 	{
@@ -63,8 +63,7 @@ function productDisplay($pdo)
 	// Save into favorite
 	if(isset($_POST['favorite_ID']))
 	{
-		$sth = selectDatabase($pdo, 'FAVORITES', '', '', 'ORDER BY favorite_ID DESC')
-		$sth->execute();
+		$sth = selectDatabase($pdo, 'FAVORITES', '', '', 'ORDER BY favorite_ID DESC');
 		$ID = -1;
 		if($row = $sth->fetch())
 		{
@@ -74,7 +73,7 @@ function productDisplay($pdo)
 		$arrayValues['favorite_ID'] = $ID;
 		$arrayValues['product_ID'] = $_POST['favorite_ID'];
 		$sth = insertDatabase($pdo, 'FAVORITES', $arrayValues);
-		echo '<script>window.location.href = "'.ABSPATH.'content/public/controllers/product-controllers.php";</script>';
+		echo '<script>window.location.href = "product";</script>';
 	}
 	?>
 	<form action="" method="post">
@@ -95,7 +94,7 @@ function productDisplay($pdo)
 		$sth = selectDatabase($pdo, 'MARKET_OFFERS', '', '', $limitRows);
 		while($row = $sth->fetch())
 		{
-			echo '<a href="'.ABSPATH.'content/public/controllers/product-controllers.php">ID: '.$row['ID'].'</a><input type="hidden" name="favorite_ID" value="'.$row['ID'].'"><input type="image" src="" alt="Favorite" value="like">';
+			echo '<a href="product?productID='.$row['ID'].'">ID: '.$row['ID'].'</a><input type="hidden" name="favorite_ID" value="'.$row['ID'].'"><input type="image" src="" alt="Favorite" value="like">';
 		}
 		?>
 	</form>
