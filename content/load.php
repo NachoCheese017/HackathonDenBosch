@@ -15,6 +15,5 @@
                 <?php load_footer(); ?>
             </footer>
         </main>
-
     </body>
 </html>
