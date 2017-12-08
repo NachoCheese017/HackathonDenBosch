@@ -5,10 +5,11 @@ session_start();
 require(ABSPATH.'admin/classcompiler.php');
 require(ABSPATH.'admin/database/database.php');
 require(ABSPATH.'admin/core/pagebuild.php');
-require(ABSPATH.'admin/core/login.php');
 
 //maakt een nieuw db object naar hackathondenbosch
 $pdo = ConnectDB();
+
+require(ABSPATH.'admin/core/login.php');
 
 //Maakt een router object voor pagination
 $router = new Router;
@@ -18,9 +19,6 @@ $uri = rtrim($uri, '/');
 if(!array_key_exists($uri, $router->routes)) {
     $uri = '';
 }
-
-// Check for user login
-login($pdo);
 
 //FIX ERROR
 //$uri = substr($uri, 0, strpos($uri, '?'));
