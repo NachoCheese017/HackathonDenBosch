@@ -3,7 +3,7 @@
 function loginCheck($pdo)
 {
 	// Check if session variables are filled
-	if(isset($_SESSION['accID']) AND isset($_SESSION['accName']) AND isset($_SESSION['accString']))
+	if(isset($_SESSION['accID']) AND isset($_SESSION['accEmail']) AND isset($_SESSION['accString']))
 	{
 		// Retreive user info
 		$sth = selectDatabase($pdo, 'users', 'ID', $_SESSION['accID'], '');

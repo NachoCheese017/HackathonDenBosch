@@ -17,4 +17,4 @@ setcookie(session_name(),
 session_destroy();
 
 // Header refresh
-echo '<script>window.location.href = "ABSPATH";</script>';
+echo '<script>window.location.href = "home";</script>';

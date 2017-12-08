@@ -9,7 +9,7 @@ require(ABSPATH.'admin/core/pagebuild.php');
 //maakt een nieuw db object naar hackathondenbosch
 $pdo = ConnectDB();
 
-require(ABSPATH.'admin/core/login.php');
+include(ABSPATH.'admin/core/login.php');
 
 //Maakt een router object voor pagination
 $router = new Router;

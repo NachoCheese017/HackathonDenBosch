@@ -1,7 +1,7 @@
 <?php
 if(isset($_GET['productid']))
 {
-	$sth = selectDatabase($pdo, 'MARKET_OFFERS', 'product_ID', $_GET['productid'], '');
+	$sth = selectDatabase($pdo, 'PRODUCTS_CUSTOMER', 'product_ID', $_GET['productid'], '');
 	if($row = $sth->fetch())
 	{
 		echo 'market_product_ID: '.$row['product_id'];
@@ -13,5 +13,5 @@ if(isset($_GET['productid']))
 }
 else
 {
-	echo '<script>window.location.href = "'.ABSPATH.'";</script>';
+	echo '<script>window.location.href = "home";</script>';
 }
