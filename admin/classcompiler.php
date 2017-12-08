@@ -1,8 +1,7 @@
 <?php
 
 $classpaths  = array(
-    'admin/router/router.php',
-    'admin/database/database.php'
+    'admin/router/router.php'
 );
 
 foreach($classpaths as $classpath) {

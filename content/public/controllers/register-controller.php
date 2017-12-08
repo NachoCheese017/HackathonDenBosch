@@ -13,6 +13,12 @@ if(!loginCheck($pdo))
 			$emailErr = 'Your email cannot be empty.';
 			$errCheck = true;
 		}
+		$sth = selectDatabase($pdo, 'USERS', 'u_mail', $_POST['user_register_email'], '');
+		if($sth->fetch())
+		{
+			$emailErr = 'This mail is already signed up. Please use another mail.';
+			$errCheck = true;
+		}
 
 		// Check password
 		if(strlen($_POST['user_register_pass']) < 6 AND !empty($_POST['user_register_pass']))
