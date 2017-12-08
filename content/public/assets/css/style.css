@@ -157,9 +157,8 @@ footer {
     border-radius: 5px;
     transition: background-color .2s, color .2s;
 }
-.button1 a {
+.button1 {
     color: #fff;
-    display: block;
 }
 .button1:hover,.button1:active {
     background-color: transparent;
@@ -179,7 +178,6 @@ footer {
 }
 .button2 a {
     color: #fff;
-    display: block;
 }
 .button2:hover,.button2:active {
     background-color: transparent;
@@ -285,4 +283,13 @@ main {
     width: 200px;
     height: calc(100% - 81px);
     background-color: #a0a0a0;
+}
+
+.productsfield {
+    width: calc(100% - 225px);
+    float: right;
+}
+.products-field {
+    height: auto;
+    margin: auto;
 }
