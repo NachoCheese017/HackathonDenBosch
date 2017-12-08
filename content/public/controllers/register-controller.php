@@ -36,8 +36,7 @@ if(!loginCheck($pdo))
 		{
 			// Retreive ID form database
 			$sth = selectDatabase($pdo, 'USERS', '', '', 'ORDER BY user_ID DESC');
-			$sth->execute();
-			$ID = -1;
+			$ID = 0;
 			if($row = $sth->fetch())
 			{
 				$ID = $row['ID'];
@@ -60,12 +59,16 @@ if(!loginCheck($pdo))
 			$sth = insertDatabase($pdo, 'USERS', $arrayValues);
 
 			// Save user into ACCOUNTS
+			// $arrayValues['setting_ID'] = $ID;
+			// $arrayValues['p_email'] = 0;
+			// $arrayValues['p_name'] = 0;
+			// $arrayValues['p_location'] = 0;
+			// $sth = insertDatabase($pdo, 'SETTINGS', $arrayValues);
 			$arrayValues['user_ID'] = $ID;
+			$arrayValues['house_ID'] = 0;
 			$arrayValues['level_ID'] = 10;
 			$arrayValues['setting_ID'] = $ID;
 			$sth = insertDatabase($pdo, 'ACCOUNTS', $arrayValues);
-			$arrayValues['setting_ID'] = $ID;
-			$sth = insertDatabase($pdo, 'SETTINGS', $arrayValues);
 			echo '<script>window.location.href = "home";</script>';
 		}
 		else
