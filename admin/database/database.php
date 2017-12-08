@@ -75,3 +75,24 @@ function deleteDatabase($pdo, $tableName, $whereValue, $whereKey)
     $sth = $pdo->prepare($query);
     $sth->execute($prepareParameters);
 }
+
+////////////////////////////////////
+
+// Save into favorite
+function favoriteProduct($pdo, $location)
+{
+    if(isset($_POST['favorite_ID']))
+    {
+        $sth = selectDatabase($pdo, 'FAVORITES', '', '', 'ORDER BY favorite_ID DESC');
+        $ID = -1;
+        if($row = $sth->fetch())
+        {
+            $ID = $row['ID'];
+        }
+        $ID++;
+        $arrayValues['favorite_ID'] = $ID;
+        $arrayValues['product_ID'] = $_POST['favorite_ID'];
+        $sth = insertDatabase($pdo, 'FAVORITES', $arrayValues);
+        echo '<script>window.location.href = "'.$location.'";</script>';
+    }
+}

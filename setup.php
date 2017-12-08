@@ -20,7 +20,6 @@ if(strpos($uri, '?'))
 {
 	$uri = substr($uri, 0, strpos($uri, '?'));
 }
-echo $uri.'<br/>';
 if(!array_key_exists($uri, $router->routes)) {
     $uri = '';
 }
