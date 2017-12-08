@@ -9,7 +9,10 @@
     <div class="header-right">
         <div class="header-user">
             <div class="header-login">
-                <p id="logintoggle">Login</p>
+                <p id="logintoggle">Inloggen</p>
+            </div>
+            <div class="header-register">
+                <a href="register">Registreren</a>
             </div>
             <form action="home" method="post">
                 <div class="header-form-login" id="login">
@@ -21,10 +24,10 @@
                     </div>
                     <div class="user-login-btm">
                         <div class="user-submit">
-                            <input class="button1" type="submit" name="user_login_submit" value="Login">
+                            <input class="button1" type="submit" name="user_login_submit" value="Inloggen">
                         </div>
                         <div class="user-forgot">
-                            <a href="home">Forgot?</a>
+                            <a href="home">Vergeten??</a>
                         </div>
                     </div>
                 </div>

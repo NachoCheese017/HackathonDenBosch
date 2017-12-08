@@ -3,6 +3,7 @@
     padding: 0px;
     font-family: 'Roboto';
     text-decoration: none;
+    box-sizing: border-box;
 }
 
 /*HEADER*/
@@ -47,7 +48,17 @@ header {
     text-align: center;
 }
 .header-login {
+    width: 50%;
+    text-align: right;
+    padding-right: 10px;
     font-size: 17px;
+    float: left;
+}
+.header-register {
+    width: 50%;
+    text-align: left;
+    padding-left: 10px;
+    float: left;
 }
 .header-form-login {
     position: fixed;
@@ -80,6 +91,7 @@ header {
 .user-submit {
     width: 60%;
     height: 40px;
+    padding-right: 10px;
     text-align: left;
     float: left;
 }
@@ -89,13 +101,17 @@ header {
 .user-forgot {
     width: 40%;
     height: 40px;
+    font-size: 13px;
     text-align: center;
     float: left;
 }
 
 /*FOOTER*/
 footer {
+    position: absolute;
+    bottom: 0px;
     height: 35px;
+    width: 100%;
 }
 .footer {
     width: 100%;
@@ -132,6 +148,21 @@ footer {
 }
 
 /*MAIN PAGE LAYOUT*/
+main {
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 45px);
+    z-index: -1;
+}
+.page_wrapper {
+    width: 100%;
+    height: 100%;
+}
 
 /*MARKET PAGE*/
 /*FILTERBAR*/
+.filterbar {
+    width: 175px;
+    height: 100%;
+    background-color: #a0a0a0;
+}
