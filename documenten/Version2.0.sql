@@ -119,29 +119,31 @@ CREATE TABLE IF NOT EXISTS `hackathondenbosch`.`ACCOUNTS` (
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- Table `hackathondenbosch`.`PRODUCTS_TEMPLATE`
+-- Table `hackathondenbosch`.`PRODUCTS`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `hackathondenbosch`.`PRODUCTS_TEMPLATE` (
-  `template_ID` INT NOT NULL,
-  `t_name` VARCHAR(45) NULL,
-  `t_description` VARCHAR(45) NULL,
-  PRIMARY KEY (`template_ID`))
+CREATE TABLE IF NOT EXISTS `hackathondenbosch`.`PRODUCTS` (
+  `product_ID` INT NOT NULL,
+  `p_type` VARCHAR(45) NULL,
+  `p_brand` VARCHAR(45) NULL,
+  `p_name` VARCHAR(45) NULL,
+  PRIMARY KEY (`product_ID`))
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- Table `hackathondenbosch`.`PRODUCT_CUSTOMER`
+-- Table `hackathondenbosch`.`PRODUCT_SPECIFICATIONS`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `hackathondenbosch`.`PRODUCTS_CUSTOMER` (
+CREATE TABLE IF NOT EXISTS `hackathondenbosch`.`PRODUCT_SPECIFICATIONS` (
   `product_ID` INT NOT NULL,
-  `template_ID` INT NOT NULL,
-  `p_description` VARCHAR(45) NULL,
-  PRIMARY KEY (`product_ID`, `template_ID`),
-  INDEX `template_id_idx` (`template_ID` ASC),
-  CONSTRAINT `template_id`
-    FOREIGN KEY (`template_ID`)
-    REFERENCES `hackathondenbosch`.`PRODUCTS_TEMPLATE` (`template_ID`)
+  `specification_ID` INT NOT NULL,
+  `s_label` VARCHAR(45) NULL,
+  `s_content` TEXT(255) NULL,
+  PRIMARY KEY (`product_ID`, `specification_ID`),
+  INDEX `product_id_idx` (`product_ID` ASC),
+  CONSTRAINT `product_id`
+    FOREIGN KEY (`product_ID`)
+    REFERENCES `hackathondenbosch`.`PRODUCTS` (`product_ID`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
@@ -185,20 +187,19 @@ INSERT INTO `hackathondenbosch`.`ACCOUNTS`
 VALUES (0, 0, 10, 0, 4);
 
 -- -----------------------------------------------------
--- Table `hackathondenbosch`.`PRODUCTS_TEMPLATE` default data
+-- Table `hackathondenbosch`.`PRODUCTS` default data
 -- -----------------------------------------------------
-INSERT INTO `hackathondenbosch`.`PRODUCTS_TEMPLATE`
-(template_ID, t_name, t_description)
-VALUES (0, 'cv', 'cv ketel'), (1, 'kraan', 'een kraan');
+INSERT INTO `hackathondenbosch`.`PRODUCTS`
+(product_ID, p_type, p_brand, p_name)
+VALUES (0, 'cv', 'Intergas', 'HRE'), (1, 'cv', 'Intergas', 'HRE+U'), (2, 'zp', 'SolarEnergy', 'Type-A'), (3, 'zp', 'SolarEnergy', 'Type-B'),
+(4, 'zp', 'SolarEnergy', 'Type-C'), (5, 'zp', 'SolarEnergy', 'Type-D'), (6, 'zp', 'SolarEnergy', 'Type-E');
 
 -- -----------------------------------------------------
--- Table `hackathondenbosch`.`PRODUCTS_CUSTOMER` default data
+-- Table `hackathondenbosch`.`PRODUCT_SPECIFICATIONS` default data
 -- -----------------------------------------------------
-INSERT INTO `hackathondenbosch`.`PRODUCTS_CUSTOMER`
-(product_ID, template_ID, p_description)
-VALUES (0, 0, 'dit is een cv ketel'), (1, 0, 'dit is nog een cvketel'), (2, 0, 'dit is de derde cvketel'), (3, 0, 'dit is de vierde cvketel'),
-(4, 1, 'mooie kraan'), (5, 1, 'tweede kraan');
-
+INSERT INTO `hackathondenbosch`.`PRODUCT_SPECIFICATIONS`
+(product_ID, specification_ID, s_label, s_content)
+VALUES (0, 0, 'vermogen', '2000A'), (0, 1, 'energy_label', 'A');
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;

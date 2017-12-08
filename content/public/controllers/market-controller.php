@@ -1,4 +1,16 @@
 <?php
+// Search
+if(isset($_POST['product_search_submit']))
+{
+	$search = $_POST['product_search_input'];
+	$addon = 'WHERE p_type LIKE %'.$search.'% OR p_brand LIKE %'.$search.'% OR p_name LIKE %'.$search.'%';
+}
+else
+{
+	$addon = '';
+}
+
+// Page nav
 if(isset($_POST['navBtn1']))
 {
 	$_SESSION['pageNmb'] = $_POST['navBtn1'];
@@ -70,7 +82,7 @@ function productDisplay($pdo)
 	{
 		$limitRows = ' LIMIT '.$_SESSION['totalPages'];
 	}
-	$sth = selectDatabase($pdo, 'PRODUCTS_CUSTOMER', '', '', $limitRows);
+	$sth = selectDatabase($pdo, 'PRODUCTS', '', '', $addon.$limitRows);
 	while($row = $sth->fetch())
 	{
 		marketProduct($row);
