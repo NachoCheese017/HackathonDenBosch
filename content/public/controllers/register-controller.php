@@ -35,11 +35,11 @@ if(!loginCheck($pdo))
 		if(!$errCheck)
 		{
 			// Retreive ID form database
-			$sth = selectDatabase($pdo, 'USERS', '', '', 'ORDER BY user_ID DESC');
+			$sth = selectDatabase($pdo, 'USERS', '', '', '');
 			$ID = 0;
-			if($row = $sth->fetch())
+			while($row = $sth->fetch())
 			{
-				$ID = $row['ID'];
+				$ID = $row['user_ID'];
 			}
 			$ID++;
 
@@ -59,11 +59,11 @@ if(!loginCheck($pdo))
 			$sth = insertDatabase($pdo, 'USERS', $arrayValues);
 
 			// Save user into ACCOUNTS
-			// $arrayValues['setting_ID'] = $ID;
-			// $arrayValues['p_email'] = 0;
-			// $arrayValues['p_name'] = 0;
-			// $arrayValues['p_location'] = 0;
-			// $sth = insertDatabase($pdo, 'SETTINGS', $arrayValues);
+			$arrayValues['setting_ID'] = $ID;
+			$arrayValues['p_email'] = 0;
+			$arrayValues['p_name'] = 0;
+			$arrayValues['p_location'] = 0;
+			$sth = insertDatabase($pdo, 'SETTINGS', $arrayValues);
 			$arrayValues['user_ID'] = $ID;
 			$arrayValues['house_ID'] = 0;
 			$arrayValues['level_ID'] = 10;

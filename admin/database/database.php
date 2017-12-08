@@ -42,6 +42,7 @@ function insertDatabase($pdo, $tableName, $arrayValues)
     }
     $sth = $pdo->prepare($query);
     $sth->execute();
+    $arrayValues = array();
 }
 
 // Update the database
@@ -61,6 +62,7 @@ function updateDatabase($pdo, $tableName, $whereValue, $whereKey, $arrayValues)
     $query .= 'WHERE '.$whereValue.' = "'.$whereKey.'"';
     $sth = $pdo->prepare($query);
     $sth->execute();
+    $arrayValues = array();
 }
 
 // Delete from database
