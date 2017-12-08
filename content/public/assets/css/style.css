@@ -6,6 +6,9 @@
 }
 
 /*HEADER*/
+header {
+    height: 45px;
+}
 .header {
     position: fixed;
     width: 100%;
@@ -64,7 +67,9 @@
 .user-name input,.user-pass input {
     width: 150px;
     height: 20px;
+    padding-left: 3px;
     border: none;
+    color: #000;
 }
 .user-login-btm {
     width: 150px;
@@ -89,10 +94,11 @@
 }
 
 /*FOOTER*/
+footer {
+    height: 35px;
+}
 .footer {
     width: 100%;
-    /*TEMP*/
-    margin-top: 150px;
 }
 .footer * {
     color: #fff;
@@ -125,4 +131,8 @@
     color: #2cc75c;
 }
 
-/*CONTENT LAYOUT*/
+/*MARKET PAGE*/
+/*FILTERBAR*/
+.filterbar {
+    height: 100px;
+}
