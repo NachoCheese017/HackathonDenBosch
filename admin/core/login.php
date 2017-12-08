@@ -93,5 +93,10 @@ if(!loginCheck($pdo))
 				echo '<div id="login_fail">Failed to login.</div>';
 			}
 		}
+		else
+		{
+			// Username unexistent
+			echo '<div id="login_fail">Failed to login.</div>';
+		}
 	}
 }
