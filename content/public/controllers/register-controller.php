@@ -57,17 +57,21 @@ if(!loginCheck($pdo))
 			$arrayValues['u_firstname'] = $_POST['user_register_firstname'];
 			$arrayValues['u_lastname'] = $_POST['user_register_lastname'];
 			$sth = insertDatabase($pdo, 'USERS', $arrayValues);
-
+			$arrayValues =array();
 			// Save user into ACCOUNTS
 			$arrayValues['setting_ID'] = $ID;
-			$arrayValues['p_email'] = 0;
-			$arrayValues['p_name'] = 0;
-			$arrayValues['p_location'] = 0;
+			$arrayValues['p_show_email'] = 0;
+			$arrayValues['p_show_name'] = 0;
+			$arrayValues['p_show_location'] = 0;
 			$sth = insertDatabase($pdo, 'SETTINGS', $arrayValues);
+			$arrayValues =array();
+			//make sestings
+
+			$arrayValues = array();
 			$arrayValues['user_ID'] = $ID;
 			$arrayValues['house_ID'] = 0;
 			$arrayValues['level_ID'] = 10;
-			$arrayValues['setting_ID'] = $ID;
+			$arrayValues['setting_ID'] = 0;//id
 			$sth = insertDatabase($pdo, 'ACCOUNTS', $arrayValues);
 			echo '<script>window.location.href = "home";</script>';
 		}
