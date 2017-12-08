@@ -9,7 +9,7 @@
         <header>
             <?php load_header(); ?>
         </header>
-        <main class="<?= $uri ?>">
+        <main>
             <?php require(ABSPATH.$router->direct($uri)); ?>
         </main>
         <footer>
