@@ -178,9 +178,10 @@ footer {
 }
 .button2 a {
     color: #fff;
+    display: block;
 }
 .button2:hover,.button2:active {
-    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.85);
     color: #375ba0;
 }
 .button2:hover a,.button2:active a {
@@ -222,6 +223,35 @@ main {
     line-height: 40px;
     font-size: 25px;
 }
+.button-left,.button-right {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+.button-left .button-market,.button-right .button-register,.button-right .button-userprofile {
+    margin: auto;
+    margin-top: 225px;
+}
+.company {
+    margin-top: -27.5px;
+}
+.company-name {
+    position: fixed;
+    width: 300px;
+    height: 55px;
+    margin: auto;
+    left: calc(50% - 150px);
+    border-radius: 10px;
+    line-height: 55px;
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 2px;
+    background-color: #375ba0;
+    color: #fff;
+    font-family: 'Oswald';
+}
+
 
 /*REGISTER PAGE*/
 .register {
