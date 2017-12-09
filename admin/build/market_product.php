@@ -19,6 +19,12 @@
                 </div>
             </div>
             <div class="card-bottom">
+                <div class="product-stats">
+                    <div class="product-views">
+                        <p><i class="fa fa-eye" aria-hidden="true"></i>
+    <?php //VIEW COUNT ?></p>
+                    </div>
+                </div>
                 <div class="readmore button2">
                     <a>Lees meer</a>
                 </div>

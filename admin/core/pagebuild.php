@@ -16,6 +16,7 @@ function load_meta() {
     <link href="content/public/assets/css/style.css" type="text/css" rel=stylesheet>
     <link href="content/public/assets/css/responsive.css" type="text/css" rel=stylesheet>
     <link href="content/public/assets/fonts/fontmanager.css" type="text/css" rel=stylesheet>
+<link href="content/public/external/font-awesome/css/font-awesome.css" type="text/css" rel=stylesheet>
     <script src="content/public/assets/js/loginmenu.js" defer="defer"></script>
     <?php
 }
