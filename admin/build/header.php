@@ -22,10 +22,10 @@
             <form action="home" method="post">
                 <div class="header-form-login" id="login">
                     <div class="user-name">
-                        <input type="text" name="user_login_name">
+                        <input type="text" name="user_login_name" placeholder="Email">
                     </div>
                     <div class="user-pass">
-                        <input type="text" name="user_login_pass">
+                        <input type="password" name="user_login_pass" placeholder="Wachtwoord">
                     </div>
                     <div class="user-login-btm">
                         <div class="user-submit">
