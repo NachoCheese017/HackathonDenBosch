@@ -16,7 +16,7 @@
 			&nbsp;&nbsp;Bewerk profiel
 		</a>
 		<a href="logout" class="href" style="position: absolute;right: 0;">
-			Bewerk profiel&nbsp;&nbsp;
+			Log uit&nbsp;&nbsp;
 		</a>
 		<div style="position: absolute;left: 45%;font-size: 20px;">
 			Uw producten:
@@ -28,7 +28,7 @@
 			Zonne paneel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			JA-SOLAR 300WP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			3330 kWh per jaar
-			<a href="product?productid=1" style="position: absolute;right: 20px;">Bekijk</a>
+			<a href="market" style="position: absolute;right: 20px;">Bekijk</a>
 		</div>
 	</div>
 </div>
