@@ -440,6 +440,10 @@ main {
     height: 20px;
     color: #000;
 }
+.product-date {
+    float: left;
+    font-size: 13px;
+}
 .product-views {
     float: right;
     font-size: 17px;

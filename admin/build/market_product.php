@@ -20,6 +20,9 @@
             </div>
             <div class="card-bottom">
                 <div class="product-stats">
+                    <div class="product-date">
+                        <p><i class="fa fa-calendar" aria-hidden="true"></i><?= $product['insert_date'] ?></p>
+                    </div>
                     <div class="product-views">
                         <p><i class="fa fa-eye" aria-hidden="true"></i>
     <?php //VIEW COUNT ?></p>

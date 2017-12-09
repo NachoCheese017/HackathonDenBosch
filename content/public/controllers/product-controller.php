@@ -4,7 +4,7 @@ if(isset($_GET['productid']))
 	$sth = selectDatabase($pdo, 'PRODUCTS', 'product_ID', $_GET['productid'], '');
 	if($row = $sth->fetch())
 	{
-		echo 'product_ID: '.$row['product_ID'];
+		include(ABSPATH.'content/public/views/product-view.php');
 	}
 	else
 	{
