@@ -7,7 +7,9 @@
             <?= $product['p_brand'] ?>
         </div>
     </div>
-    <div class="readmore button2">
-        <a>Lees meer</a>
+    <div class="card-bottom">
+        <div class="readmore button2">
+            <a>Lees meer</a>
+        </div>
     </div>
 </div>
