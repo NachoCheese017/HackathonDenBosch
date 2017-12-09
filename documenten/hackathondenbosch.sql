@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 09 dec 2017 om 10:17
+-- Gegenereerd op: 09 dec 2017 om 11:24
 -- Serverversie: 10.1.28-MariaDB
 -- PHP-versie: 7.1.11
 
@@ -126,22 +126,10 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`product_ID`, `user_ID`, `p_type`, `p_brand`, `p_name`, `insert_date`) VALUES
-(0, 0, 'cv', 'Intergas', 'HRE', ''),
-(1, 0, 'cv', 'Intergas', 'HRE+U', ''),
-(2, 0, 'zp', 'SolarEnergy', 'Type-A', ''),
-(3, 0, 'zp', 'SolarEnergy', 'Type-B', ''),
-(4, 0, 'zp', 'SolarEnergy', 'Type-C', ''),
-(5, 0, 'zp', 'SolarEnergy', 'Type-D', ''),
-(6, 0, 'zp', 'SolarEnergy', 'Type-E', ''),
-(7, 1, 'ssd', '', 'ergergf', '2017-12-09 10:12:53'),
-(8, 1, 'ssd', '', 'ergergf', '2017-12-09 10:13:26'),
-(9, 1, 'ssd', '', 'ergergf', '2017-12-09 10:13:26'),
-(10, 1, 'ssd', '', 'ergergf', '2017-12-09 10:13:27'),
-(11, 1, 'ssd', '', 'ergergf', '2017-12-09 10:13:27'),
-(12, 1, 'ssd', '', 'ergergf', '2017-12-09 10:13:27'),
-(13, 1, 'ssd', '', 'ergergf', '2017-12-09 10:13:27'),
-(14, 1, 'ssd', '', 'ergergf', '2017-12-09 10:13:27'),
-(15, 1, 'ssd', '', 'ergergf', '2017-12-09 10:13:28');
+(1, 1, 'zonnepaneel', 'Percium', 'JA-SOLAR 300WP', '2017-12-09 11:13:18'),
+(2, 1, 'zonnepaneel', 'CSUN', '275 WP', '2017-12-09 11:22:00'),
+(3, 1, 'cv-ketel', 'E-TECH', 'W36 36 kW', '2017-12-09 11:23:38'),
+(4, 1, 'cv-ketel', 'Remeha Tzerra', 'plus M 28c CW4', '2017-12-09 11:24:04');
 
 -- --------------------------------------------------------
 
@@ -161,8 +149,9 @@ CREATE TABLE `product_specifications` (
 --
 
 INSERT INTO `product_specifications` (`product_ID`, `specification_ID`, `s_label`, `s_content`) VALUES
-(0, 0, 'vermogen', '2000A'),
-(0, 1, 'energy_label', 'A');
+(1, 1, 'Jaarlijks gebruik', '3330 kWh'),
+(1, 2, 'Dakoppervlak', '+/- 21 m2'),
+(2, 3, 'Paneel cellen', '60');
 
 -- --------------------------------------------------------
 
