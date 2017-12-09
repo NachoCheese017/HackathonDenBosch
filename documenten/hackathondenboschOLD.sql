@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 09, 2017 at 11:48 AM
--- Server version: 10.1.26-MariaDB
--- PHP Version: 7.1.8
+-- Gegenereerd op: 09 dec 2017 om 11:24
+-- Serverversie: 10.1.28-MariaDB
+-- PHP-versie: 7.1.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `accounts`
+-- Tabelstructuur voor tabel `accounts`
 --
 
 CREATE TABLE `accounts` (
@@ -37,7 +37,7 @@ CREATE TABLE `accounts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `accounts`
+-- Gegevens worden geëxporteerd voor tabel `accounts`
 --
 
 INSERT INTO `accounts` (`user_ID`, `house_ID`, `level_ID`, `setting_ID`, `h_occupants`) VALUES
@@ -47,7 +47,7 @@ INSERT INTO `accounts` (`user_ID`, `house_ID`, `level_ID`, `setting_ID`, `h_occu
 -- --------------------------------------------------------
 
 --
--- Table structure for table `houses`
+-- Tabelstructuur voor tabel `houses`
 --
 
 CREATE TABLE `houses` (
@@ -60,7 +60,7 @@ CREATE TABLE `houses` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `houses`
+-- Gegevens worden geëxporteerd voor tabel `houses`
 --
 
 INSERT INTO `houses` (`house_ID`, `h_city`, `h_zipcode`, `h_address`, `h_rent_buy`, `h_type`) VALUES
@@ -69,7 +69,7 @@ INSERT INTO `houses` (`house_ID`, `h_city`, `h_zipcode`, `h_address`, `h_rent_bu
 -- --------------------------------------------------------
 
 --
--- Table structure for table `house_types`
+-- Tabelstructuur voor tabel `house_types`
 --
 
 CREATE TABLE `house_types` (
@@ -78,7 +78,7 @@ CREATE TABLE `house_types` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `house_types`
+-- Gegevens worden geëxporteerd voor tabel `house_types`
 --
 
 INSERT INTO `house_types` (`house_type_ID`, `house_name`) VALUES
@@ -88,7 +88,7 @@ INSERT INTO `house_types` (`house_type_ID`, `house_name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `levels`
+-- Tabelstructuur voor tabel `levels`
 --
 
 CREATE TABLE `levels` (
@@ -97,7 +97,7 @@ CREATE TABLE `levels` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `levels`
+-- Gegevens worden geëxporteerd voor tabel `levels`
 --
 
 INSERT INTO `levels` (`level_ID`, `l_name`) VALUES
@@ -109,7 +109,7 @@ INSERT INTO `levels` (`level_ID`, `l_name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Tabelstructuur voor tabel `products`
 --
 
 CREATE TABLE `products` (
@@ -118,28 +118,23 @@ CREATE TABLE `products` (
   `p_type` varchar(45) DEFAULT NULL,
   `p_brand` varchar(45) DEFAULT NULL,
   `p_name` varchar(45) DEFAULT NULL,
-  `insert_date` varchar(45) NOT NULL,
-  `p_energylabel` varchar(255) NOT NULL,
-  `p_condition` varchar(255) NOT NULL,
-  `p_viewcount` int(25) NOT NULL
+  `insert_date` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `products`
+-- Gegevens worden geëxporteerd voor tabel `products`
 --
 
-INSERT INTO `products` (`product_ID`, `user_ID`, `p_type`, `p_brand`, `p_name`, `insert_date`, `p_energylabel`, `p_condition`, `p_viewcount`) VALUES
-(0, 1, 'Solarlader Goal Zero Boulder 90 32405 Laadst ', 'Goal Zero', 'Boulder', '2017-12-09 11:13:18', 'B', 'Zeer Goed', 25),
-(1, 1, 'zonnepaneel', 'Percium', 'JA-SOLAR 300WP', '2017-12-09 11:13:18', 'A', 'Gebruikt', 11),
-(2, 1, 'zonnepaneel', 'CSUN', '275 WP', '2017-12-09 11:22:00', 'B', 'Gebruikt', 56),
-(3, 1, 'cv-ketel', 'E-TECH', 'W36 36 kW', '2017-12-09 11:23:38', 'A', 'Z.G.A.N.', 7),
-(4, 1, 'cv-ketel', 'Remeha Tzerra', 'plus M 28c CW4', '2017-12-09 11:24:04', 'C', 'Gebruikt', 37),
-(67, 7, ' Zoom Vaillant ecoTEC plus VHR 30-34 CW5', 'Vaillant', ' Zoom VHR 30-34 CW5', '2017-12-09 11:13:18', 'A', 'Gebruikt', 14);
+INSERT INTO `products` (`product_ID`, `user_ID`, `p_type`, `p_brand`, `p_name`, `insert_date`) VALUES
+(1, 1, 'zonnepaneel', 'Percium', 'JA-SOLAR 300WP', '2017-12-09 11:13:18'),
+(2, 1, 'zonnepaneel', 'CSUN', '275 WP', '2017-12-09 11:22:00'),
+(3, 1, 'cv-ketel', 'E-TECH', 'W36 36 kW', '2017-12-09 11:23:38'),
+(4, 1, 'cv-ketel', 'Remeha Tzerra', 'plus M 28c CW4', '2017-12-09 11:24:04');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `product_specifications`
+-- Tabelstructuur voor tabel `product_specifications`
 --
 
 CREATE TABLE `product_specifications` (
@@ -150,7 +145,7 @@ CREATE TABLE `product_specifications` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `product_specifications`
+-- Gegevens worden geëxporteerd voor tabel `product_specifications`
 --
 
 INSERT INTO `product_specifications` (`product_ID`, `specification_ID`, `s_label`, `s_content`) VALUES
@@ -161,7 +156,7 @@ INSERT INTO `product_specifications` (`product_ID`, `specification_ID`, `s_label
 -- --------------------------------------------------------
 
 --
--- Table structure for table `settings`
+-- Tabelstructuur voor tabel `settings`
 --
 
 CREATE TABLE `settings` (
@@ -172,7 +167,7 @@ CREATE TABLE `settings` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `settings`
+-- Gegevens worden geëxporteerd voor tabel `settings`
 --
 
 INSERT INTO `settings` (`setting_ID`, `p_show_email`, `p_show_name`, `p_show_location`) VALUES
@@ -181,7 +176,7 @@ INSERT INTO `settings` (`setting_ID`, `p_show_email`, `p_show_name`, `p_show_loc
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Tabelstructuur voor tabel `users`
 --
 
 CREATE TABLE `users` (
@@ -194,7 +189,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `users`
+-- Gegevens worden geëxporteerd voor tabel `users`
 --
 
 INSERT INTO `users` (`user_ID`, `u_mail`, `u_password`, `u_salt`, `u_firstname`, `u_lastname`) VALUES
@@ -202,11 +197,11 @@ INSERT INTO `users` (`user_ID`, `u_mail`, `u_password`, `u_salt`, `u_firstname`,
 (1, 'stijnklomp1@hotmail.com', '810b7e55db4974812113d5d86bbd953e2cd8579603ea61a344425c38d39176ef6d08b86d91cdd986dfa97fac132ab02beb63735f12132a98cd94b58db386ce74', '1b10ea70d81d57c2f4f76e7d182c1f107f37d3d743aa43db2f6fc39da6a5ee4b1a6d8ddbf788a674ae8118bdd09a6c8158dc7ae131030e753859ed5ff3d481de', 'Stijn', 'Klomp');
 
 --
--- Indexes for dumped tables
+-- Indexen voor geëxporteerde tabellen
 --
 
 --
--- Indexes for table `accounts`
+-- Indexen voor tabel `accounts`
 --
 ALTER TABLE `accounts`
   ADD PRIMARY KEY (`user_ID`),
@@ -215,55 +210,55 @@ ALTER TABLE `accounts`
   ADD KEY `setting_id_idx` (`setting_ID`);
 
 --
--- Indexes for table `houses`
+-- Indexen voor tabel `houses`
 --
 ALTER TABLE `houses`
   ADD PRIMARY KEY (`house_ID`),
   ADD KEY `house_type_idx` (`h_type`);
 
 --
--- Indexes for table `house_types`
+-- Indexen voor tabel `house_types`
 --
 ALTER TABLE `house_types`
   ADD PRIMARY KEY (`house_type_ID`);
 
 --
--- Indexes for table `levels`
+-- Indexen voor tabel `levels`
 --
 ALTER TABLE `levels`
   ADD PRIMARY KEY (`level_ID`);
 
 --
--- Indexes for table `products`
+-- Indexen voor tabel `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`product_ID`);
 
 --
--- Indexes for table `product_specifications`
+-- Indexen voor tabel `product_specifications`
 --
 ALTER TABLE `product_specifications`
   ADD PRIMARY KEY (`product_ID`,`specification_ID`),
   ADD KEY `product_id_idx` (`product_ID`);
 
 --
--- Indexes for table `settings`
+-- Indexen voor tabel `settings`
 --
 ALTER TABLE `settings`
   ADD PRIMARY KEY (`setting_ID`);
 
 --
--- Indexes for table `users`
+-- Indexen voor tabel `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`user_ID`);
 
 --
--- Constraints for dumped tables
+-- Beperkingen voor geëxporteerde tabellen
 --
 
 --
--- Constraints for table `accounts`
+-- Beperkingen voor tabel `accounts`
 --
 ALTER TABLE `accounts`
   ADD CONSTRAINT `house_id` FOREIGN KEY (`house_ID`) REFERENCES `houses` (`house_ID`) ON DELETE NO ACTION ON UPDATE CASCADE,
@@ -272,13 +267,13 @@ ALTER TABLE `accounts`
   ADD CONSTRAINT `user_id` FOREIGN KEY (`user_ID`) REFERENCES `users` (`user_ID`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
--- Constraints for table `houses`
+-- Beperkingen voor tabel `houses`
 --
 ALTER TABLE `houses`
   ADD CONSTRAINT `house_type` FOREIGN KEY (`h_type`) REFERENCES `house_types` (`house_type_ID`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Constraints for table `product_specifications`
+-- Beperkingen voor tabel `product_specifications`
 --
 ALTER TABLE `product_specifications`
   ADD CONSTRAINT `product_id` FOREIGN KEY (`product_ID`) REFERENCES `products` (`product_ID`) ON DELETE NO ACTION ON UPDATE CASCADE;
