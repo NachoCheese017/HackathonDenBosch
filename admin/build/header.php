@@ -39,7 +39,7 @@
             </form>
             <?php } else { ?>
             <div class="header-welcome">
-                <p>Hello user</p>
+                <a href="profiel"><p>Hello user</p></a>
             </div>
             <div class="header-logout">
                 <a href="logout">Uitloggen</a>
