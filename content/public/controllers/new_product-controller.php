@@ -11,9 +11,11 @@ if(loginCheck($pdo))
 		}
 		$ID++;
 		$arrayValues['product_ID'] = $ID;
+		$arrayValues['user_ID'] = $_SESSION['accID'];
 		$arrayValues['p_type'] = $_POST['p_type'];
 		$arrayValues['p_brand'] = $_POST['p_brand'];
 		$arrayValues['p_name'] = $_POST['p_name'];
+		$arrayValues['insert_date'] = date("Y-m-d H:i:s");
 		$sth = insertDatabase($pdo, 'PRODUCTS', $arrayValues);
 		$count = 1;
 		$sth = selectDatabase($pdo, 'PRODUCT_SPECIFICATIONS', '', '', '');
