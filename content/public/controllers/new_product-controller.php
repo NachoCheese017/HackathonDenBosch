@@ -7,7 +7,7 @@ if(loginCheck($pdo))
 	}
 	else
 	{
-		include(ABSPATH.'content/public/views/register-view.php');
+		include(ABSPATH.'content/public/views/new_product-view.php');
 	}
 }
 else

@@ -9,7 +9,7 @@ class Router {
         'register'=>'content/public/controllers/register-controller.php',
         'logout'=>'content/public/controllers/logout-controller.php',
     	'change'=>'content/public/controllers/change-controller.php',
-      'data'=>'content/public/controllers/data-controller.php',
+        'data'=>'content/public/controllers/data-controller.php',
         'newproduct'=>'content/public/controllers/new_product-controller.php');
 
     public function direct($uri) {
