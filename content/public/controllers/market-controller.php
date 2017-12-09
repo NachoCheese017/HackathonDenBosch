@@ -3,7 +3,7 @@
 if(isset($_POST['product_search_submit']))
 {
 	$search = $_POST['product_search_input'];
-	$addon = ' WHERE p_type LIKE %'.$search.'% OR p_brand LIKE %'.$search.'% OR p_name LIKE %'.$search.'%';
+	$addon = " WHERE p_type LIKE '%".$search."%' OR p_brand LIKE '%".$search."%' OR p_name LIKE '%".$search."%'";
 }
 else
 {
@@ -65,7 +65,7 @@ if(empty($_SESSION['totalPages']))
 	$_SESSION['totalPages'] = 30;
 }
 
-$sth = $pdo->prepare('SELECT COUNT(*) FROM PRODUCTS_TEMPLATE');
+$sth = $pdo->prepare('SELECT COUNT(*) FROM PRODUCTS');
 $sth->execute();
 $totalPages = $sth->fetchColumn();
 $totalPages = ceil($totalPages / 20);
