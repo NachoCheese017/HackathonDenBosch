@@ -188,6 +188,25 @@ footer {
 .button2:hover a,.button2:active a {
     color: #375ba0;
 }
+.button3 {
+    border: 1px solid #375ba0;
+    background-color: #375ba0;
+    line-height: inherit;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color .2s, color .2s;
+}
+.button3 {
+    color: #fff;
+}
+.button3:hover,.button3:active {
+    background-color: transparent;
+    color: #375ba0;
+}
+.button3:hover a,.button3:active a {
+    color: #375ba0;
+}
 
 /*MAIN PAGE LAYOUT*/
 .wrap {
@@ -427,4 +446,8 @@ main {
 }
 .readmore {
     border-radius: 5px;
+}
+#newlabels {
+    height: unset;
+    min-height: 35px;
 }

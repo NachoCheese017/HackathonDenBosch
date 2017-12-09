@@ -12,7 +12,7 @@
             </div>
             <?php } else { ?>
             <div class="button-userprofile button2">
-                <a href="userprofile">Mijn profiel</a>
+                <a href="profiel">Mijn profiel</a>
             </div>
             <?php } ?>
         </div>

@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 <div class="readmore button2">
-                    <a>Lees meer</a>
+                    <a href="product?productid=<?= $product['product_ID'] ?>">Lees meer</a>
                 </div>
             </div>
         </div>
