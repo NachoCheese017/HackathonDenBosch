@@ -5,7 +5,7 @@
         <div class="product-search">
             <div class="products-filter">
                 <div class="searchbar">
-                    <form action="">
+                    <form action="" method="post">
                         <input type="text" placeholder="zoeken..." name="product_search_input">
                         <input type="submit" name="product_search_submit" value="zoek">
                     </form>
