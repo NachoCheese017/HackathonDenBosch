@@ -430,10 +430,18 @@ main {
     text-align: left;
     float: left;
 }
+.product-names p {
+    overflow: hidden;
+    height: 20px;
+}
 .product-values {
     width: 50%;
     text-align: left;
     float: left;
+}
+.product-values p {
+    overflow: hidden;
+    height: 20px;
 }
 .product-stats {
     width: 100%;
