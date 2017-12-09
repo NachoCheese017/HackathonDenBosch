@@ -28,7 +28,7 @@
 			Zonne paneel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			JA-SOLAR 300WP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			3330 kWh per jaar
-			<a href="market" style="position: absolute;right: 20px;">Bekijk</a>
+			<a href="product?productid=1" style="position: absolute;right: 20px;">Bekijk</a>
 		</div>
 	</div>
 </div>
