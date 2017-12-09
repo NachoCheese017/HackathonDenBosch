@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 09 dec 2017 om 10:07
+-- Gegenereerd op: 09 dec 2017 om 10:17
 -- Serverversie: 10.1.28-MariaDB
 -- PHP-versie: 7.1.11
 
@@ -132,7 +132,16 @@ INSERT INTO `products` (`product_ID`, `user_ID`, `p_type`, `p_brand`, `p_name`, 
 (3, 0, 'zp', 'SolarEnergy', 'Type-B', ''),
 (4, 0, 'zp', 'SolarEnergy', 'Type-C', ''),
 (5, 0, 'zp', 'SolarEnergy', 'Type-D', ''),
-(6, 0, 'zp', 'SolarEnergy', 'Type-E', '');
+(6, 0, 'zp', 'SolarEnergy', 'Type-E', ''),
+(7, 1, 'ssd', '', 'ergergf', '2017-12-09 10:12:53'),
+(8, 1, 'ssd', '', 'ergergf', '2017-12-09 10:13:26'),
+(9, 1, 'ssd', '', 'ergergf', '2017-12-09 10:13:26'),
+(10, 1, 'ssd', '', 'ergergf', '2017-12-09 10:13:27'),
+(11, 1, 'ssd', '', 'ergergf', '2017-12-09 10:13:27'),
+(12, 1, 'ssd', '', 'ergergf', '2017-12-09 10:13:27'),
+(13, 1, 'ssd', '', 'ergergf', '2017-12-09 10:13:27'),
+(14, 1, 'ssd', '', 'ergergf', '2017-12-09 10:13:27'),
+(15, 1, 'ssd', '', 'ergergf', '2017-12-09 10:13:28');
 
 -- --------------------------------------------------------
 
