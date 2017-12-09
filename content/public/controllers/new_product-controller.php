@@ -35,7 +35,6 @@ if(loginCheck($pdo))
 				$arrayValues['s_label'] = $_POST['p_label_'.$count];
 				$arrayValues['s_content'] = $_POST['p_description_'.$count];
 				$sth = insertDatabase($pdo, 'PRODUCT_SPECIFICATIONS', $arrayValues);
-				echo '<script>alert('.$ID2.');</script>';
 				$ID2++;
 			}
 			$count++;
