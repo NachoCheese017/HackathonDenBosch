@@ -65,7 +65,7 @@ if(empty($_SESSION['totalPages']))
 	$_SESSION['totalPages'] = 30;
 }
 
-$sth = $pdo->prepare('SELECT COUNT(*) FROM template');
+$sth = $pdo->prepare('SELECT COUNT(*) FROM PRODUCTS_TEMPLATE');
 $sth->execute();
 $totalPages = $sth->fetchColumn();
 $totalPages = ceil($totalPages / 20);
@@ -85,9 +85,7 @@ function productDisplay($pdo, $addon)
 	$sth = selectDatabase($pdo, 'PRODUCTS', '', '', $addon.$limitRows);
 	while($row = $sth->fetch())
 	{
-		echo '<a href="product?productID='.$row['product_ID'].'">';
 		marketProduct($row);
-		echo '</a>';
 	}
 }
 
