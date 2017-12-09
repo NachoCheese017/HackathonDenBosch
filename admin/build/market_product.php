@@ -1,3 +1,4 @@
+<a href="product?productID=<?= $product['product_ID'] ?>">
 <div class="product-card" id="productid_<?= $product['product_ID'] ?>">
     <div class="card-content">
         <div class="product-name">
@@ -13,3 +14,4 @@
         </div>
     </div>
 </div>
+</a>
