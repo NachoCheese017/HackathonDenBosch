@@ -10,7 +10,8 @@ class Router {
         'logout'=>'content/public/controllers/logout-controller.php',
     	'change'=>'content/public/controllers/change-controller.php',
         'data'=>'content/public/controllers/data-controller.php',
-        'newproduct'=>'content/public/controllers/new_product-controller.php');
+        'newproduct'=>'content/public/controllers/new_product-controller.php',
+        'profiel'=>'content/public/controllers/profile-controller.php');
 
     public function direct($uri) {
         return $this->routes[$uri];
